@@ -1,3 +1,6 @@
+.venv
+*.py[cod]
+
 .DS_Store
 node_modules
 /dist
