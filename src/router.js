@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
+import Add from './components/add.vue';
 
 Vue.use(Router);
 
@@ -8,8 +8,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
+      name: 'add',
+      component: Add,
+    },
+    {
+      path: '/add',
+      name: 'add',
+      component: Add,
     },
     {
       path: '/about',
