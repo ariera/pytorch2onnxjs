@@ -17,5 +17,12 @@ torch.onnx.export(
     output_names=output_names,
 )
 
+import json
+
+with open('word_to_ix.json', 'w') as fp:
+    json.dump(word_to_ix, fp, indent=4)
+
 import shutil
 shutil.move("embeddings.onnx", "public/models/embeddings.onnx")
+shutil.move("word_to_ix.json", "public/models/word_to_ix.json")
+

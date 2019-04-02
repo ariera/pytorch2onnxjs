@@ -15,8 +15,9 @@ class NGramLanguageModeler(nn.Module):
         embeds = self.embeddings(inputs).view((1, -1))
         out = F.relu(self.linear1(embeds))
         out = self.linear2(out)
-        log_probs = F.log_softmax(out, dim=1)
-        return log_probs
+        # log_probs = F.log_softmax(out, dim=1)
+        # return log_probs
+        return out
 
 def get_data():
     # We will use Shakespeare Sonnet 2
@@ -51,7 +52,8 @@ def train(epochs=1000):
 
     trigrams, word_to_ix, vocab = get_data()
     losses = []
-    loss_function = nn.NLLLoss()
+    # loss_function = nn.NLLLoss()
+    loss_function = nn.CrossEntropyLoss()
     model = NGramLanguageModeler(len(vocab), EMBEDDING_DIM, CONTEXT_SIZE)
     optimizer = optim.SGD(model.parameters(), lr=0.001)
 
