@@ -3,6 +3,7 @@
     <div id="nav">
       <h3>From PyTorch to ONNX.js</h3>
       <router-link to="/add">Add</router-link> |
+      <router-link to="/embedding-example">Embeddings</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <div class="container">

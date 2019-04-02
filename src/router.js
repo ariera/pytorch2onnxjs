@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Add from './components/add.vue';
+import EmbeddingExample from './components/embedding-example.vue';
 
 Vue.use(Router);
 
@@ -15,6 +16,11 @@ export default new Router({
       path: '/add',
       name: 'add',
       component: Add,
+    },
+    {
+      path: '/embedding-example',
+      name: 'embedding-example',
+      component: EmbeddingExample,
     },
     {
       path: '/about',
